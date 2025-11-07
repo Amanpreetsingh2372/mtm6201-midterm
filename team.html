@@ -29,7 +29,7 @@
   <main id="main" class="wrap">
     <section class="team-hero">
       <h1>Meet our Nutrition Specialists</h1>
-      <p>Experienced dietitians and coaches who craft practical, tasty plans.</p>
+      <p>Experienced dietitians and coaches crafting practical, tasty plans.</p>
     </section>
 
     <section class="team-grid" aria-label="Team members">
@@ -65,15 +65,14 @@
 
   <script>
     // nav toggle for team page
-    const btnTeam = document.getElementById('menu-toggle-team');
-    const navTeam = document.getElementById('nav-team');
-    btnTeam.addEventListener('click', () => {
-      const expanded = btnTeam.getAttribute('aria-expanded') === 'true';
-      btnTeam.setAttribute('aria-expanded', String(!expanded));
-      navTeam.classList.toggle('open');
-      navTeam.setAttribute('aria-hidden', expanded ? 'true' : 'false');
+    const menuBtnTeam = document.getElementById('menu-toggle-team');
+    const navPanelTeam = document.getElementById('nav-team');
+    menuBtnTeam.addEventListener('click', () => {
+      const open = menuBtnTeam.getAttribute('aria-expanded') === 'true';
+      menuBtnTeam.setAttribute('aria-expanded', String(!open));
+      navPanelTeam.classList.toggle('open');
+      navPanelTeam.setAttribute('aria-hidden', open ? 'true' : 'false');
     });
-
     document.getElementById('yr2').textContent = new Date().getFullYear();
   </script>
 </body>
