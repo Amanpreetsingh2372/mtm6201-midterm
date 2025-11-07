@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nutritionist — Our Process</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a class="skip-to" href="#main-content">Skip to content</a>
+
+  <header class="main-header" role="banner">
+    <div class="wrap header-grid">
+      <div class="logo"><a href="index.html">Nutritionist</a></div>
+      <nav class="nav" role="navigation" aria-label="Main Navigation">
+        <button id="menu-toggle-proc" aria-expanded="false" aria-controls="nav-proc">Menu</button>
+        <ul id="nav-proc" class="nav-list" aria-hidden="true">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="process.html" class="active">Process</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="wrap">
+    <section class="process-intro">
+      <h1>How we create your plan</h1>
+      <p>Clear, step-by-step approach so you always know what's next.</p>
+    </section>
+
+    <!-- grid style timeline (different look than other project) -->
+    <section class="flow">
+      <div class="flow-item">
+        <div class="num">01</div>
+        <div class="flow-body">
+          <h3>Discovery Call</h3>
+          <p>A short call to learn your goals and any constraints.</p>
+        </div>
+      </div>
+
+      <div class="flow-item alt">
+        <div class="num">02</div>
+        <div class="flow-body">
+          <h3>Deep Assessment</h3>
+          <p>Food history, lab info (if available) and lifestyle mapping.</p>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="num">03</div>
+        <div class="flow-body">
+          <h3>Plan Creation</h3>
+          <p>Personalised weekly menus, recipes and coaching schedule.</p>
+        </div>
+      </div>
+
+      <div class="flow-item alt">
+        <div class="num">04</div>
+        <div class="flow-body">
+          <h3>Ongoing Support</h3>
+          <p>Regular check-ins and plan adjustments for long-term success.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>Questions? hello@nutritionist.example</div>
+      <div>© <span id="yr3"></span> Nutritionist</div>
+    </div>
+  </footer>
+
+  <script>
+    // nav toggle for process
+    const btnProc = document.getElementById('menu-toggle-proc');
+    const navProc = document.getElementById('nav-proc');
+    btnProc.addEventListener('click', () => {
+      const expanded = btnProc.getAttribute('aria-expanded') === 'true';
+      btnProc.setAttribute('aria-expanded', String(!expanded));
+      navProc.classList.toggle('open');
+      navProc.setAttribute('aria-hidden', expanded ? 'true' : 'false');
+    });
+
+    document.getElementById('yr3').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
