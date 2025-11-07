@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Nutritionist — Our Process</title>
+  <meta name="description" content="How Nutritionist works — simple steps to create a plan that fits your life.">
+  <!-- fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
@@ -27,48 +29,63 @@
   </header>
 
   <main id="main-content" class="wrap">
-    <section class="process-intro">
-      <h1>How we create your plan</h1>
-      <p>Clear, step-by-step approach so you always know what's next.</p>
+    <!-- Intro area with image on right -->
+    <section class="process-hero" aria-labelledby="process-hero-title">
+      <div class="process-intro">
+        <h1 id="process-hero-title">How we create your plan</h1>
+        <p class="lead">A clear, human-centered process — assess, plan, practice and refine. We keep you in the loop at every step.</p>
+      </div>
+
+      <div class="process-media" aria-hidden="true">
+        <img
+          src="assets/process-small.jpg"
+          srcset="assets/process-small.jpg 600w, assets/process-large.jpg 1400w"
+          sizes="(max-width:720px) 100vw, 45vw"
+          alt="Illustration of process flow: consultation, planning and support">
+      </div>
     </section>
 
-    <!-- grid style timeline (different look than other project) -->
-    <section class="flow">
-      <div class="flow-item">
-        <div class="num">01</div>
-        <div class="flow-body">
-          <h3>Discovery Call</h3>
-          <p>A short call to learn your goals and any constraints.</p>
-        </div>
-      </div>
+    <!-- Steps: clean card layout with small numbered squares for visual order -->
+    <section class="flow" aria-labelledby="flow-title">
+      <h2 id="flow-title" class="section-heading">Our simple steps</h2>
 
-      <div class="flow-item alt">
-        <div class="num">02</div>
-        <div class="flow-body">
-          <h3>Deep Assessment</h3>
-          <p>Food history, lab info (if available) and lifestyle mapping.</p>
-        </div>
-      </div>
+      <div class="flow-grid">
+        <article class="flow-card">
+          <div class="num-square">1</div>
+          <div class="flow-copy">
+            <h3>Discovery Call</h3>
+            <p>Short call to learn goals, preferences and constraints.</p>
+          </div>
+        </article>
 
-      <div class="flow-item">
-        <div class="num">03</div>
-        <div class="flow-body">
-          <h3>Plan Creation</h3>
-          <p>Personalised weekly menus, recipes and coaching schedule.</p>
-        </div>
-      </div>
+        <article class="flow-card">
+          <div class="num-square">2</div>
+          <div class="flow-copy">
+            <h3>Deep Assessment</h3>
+            <p>Food history, measurements and lifestyle mapping.</p>
+          </div>
+        </article>
 
-      <div class="flow-item alt">
-        <div class="num">04</div>
-        <div class="flow-body">
-          <h3>Ongoing Support</h3>
-          <p>Regular check-ins and plan adjustments for long-term success.</p>
-        </div>
+        <article class="flow-card">
+          <div class="num-square">3</div>
+          <div class="flow-copy">
+            <h3>Plan Creation</h3>
+            <p>Personalised weekly menus, recipes and simple habit goals.</p>
+          </div>
+        </article>
+
+        <article class="flow-card">
+          <div class="num-square">4</div>
+          <div class="flow-copy">
+            <h3>Ongoing Support</h3>
+            <p>Regular check-ins and adjustments so the plan evolves with you.</p>
+          </div>
+        </article>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="wrap footer-grid">
       <div>Questions? hello@nutritionist.example</div>
       <div>© <span id="yr3"></span> Nutritionist</div>
@@ -76,7 +93,7 @@
   </footer>
 
   <script>
-    // nav toggle for process
+    // small menu toggle
     const btnProc = document.getElementById('menu-toggle-proc');
     const navProc = document.getElementById('nav-proc');
     btnProc.addEventListener('click', () => {
