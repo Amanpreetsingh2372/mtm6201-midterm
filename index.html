@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nutritionist — Personalized Plans</title>
+  <meta name="description" content="Nutritionist — personalized nutrition plans, guided coaching, and healthy recipes.">
+
+  <!-- Fonts (different choice than other project) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- different css filename to avoid similarity -->
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <!-- keyboard skip -->
+  <a class="skip-to" href="#content">Skip to content</a>
+
+  <!-- top header strip -->
+  <div class="top-strip">
+    <div class="wrap">
+      <small>Open consultations — Book today</small>
+      <div class="contact">📞 +91 91813 23 2309</div>
+    </div>
+  </div>
+
+  <!-- main header -->
+  <header class="main-header" role="banner">
+    <div class="wrap header-grid">
+      <div class="logo"><a href="index.html">Nutritionist</a></div>
+      <nav class="nav" role="navigation" aria-label="Main Navigation">
+        <button id="menu-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+        <ul id="nav-list" class="nav-list" aria-hidden="true">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="#">Resources</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- hero with left content, right small gallery -->
+  <main id="content" class="wrap">
+    <section class="hero-area">
+      <div class="hero-left">
+        <h1>Eat better. Live better. <span class="accent">One plan at a time.</span></h1>
+        <p class="subtitle">Evidence-based meal planning, regular coaching and tasty recipes built around you.</p>
+        <div class="actions">
+          <a class="btn primary" href="#">Start Free Trial</a>
+          <a class="btn secondary" href="#">See Plans</a>
+        </div>
+        <p class="kpi">Trusted by <strong>500+</strong> clients across the city</p>
+      </div>
+
+      <div class="hero-right">
+        <div class="mini-card">Weekly menus</div>
+        <div class="mini-card">Progress tracking</div>
+        <div class="mini-card">Recipe videos</div>
+      </div>
+    </section>
+
+    <!-- feature row -->
+    <section class="features">
+      <article class="fcard">
+        <h3>Custom meal plans</h3>
+        <p>Plans created from your preferences, allergies and schedule.</p>
+      </article>
+      <article class="fcard">
+        <h3>1:1 coaching</h3>
+        <p>Regular check-ins to keep you accountable and progressing.</p>
+      </article>
+      <article class="fcard">
+        <h3>Smart tracking</h3>
+        <p>Insights from your logged meals help us fine-tune your plan.</p>
+      </article>
+    </section>
+
+    <!-- small blog teasers -->
+    <section class="insights">
+      <h2>Insights</h2>
+      <ul>
+        <li><a href="#">How to build a breakfast you don't skip</a></li>
+        <li><a href="#">5 pantry staples for quick dinners</a></li>
+        <li><a href="#">Protein portions simplified</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap footer-grid">
+      <div>© <span id="yr"></span> Nutritionist</div>
+      <div><a href="#">Privacy</a> · <a href="#">Terms</a></div>
+    </div>
+  </footer>
+
+  <!-- small JS -->
+  <script>
+    // simple accessible menu toggle
+    const menuBtn = document.getElementById('menu-toggle');
+    const navList = document.getElementById('nav-list');
+    menuBtn.addEventListener('click', () => {
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+      navList.classList.toggle('open');
+      navList.setAttribute('aria-hidden', expanded ? 'true' : 'false');
+    });
+
+    // populate year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
