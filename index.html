@@ -4,21 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Nutritionist — Personalized Plans</title>
-  <meta name="description" content="Nutritionist — personalized nutrition plans, guided coaching, and healthy recipes.">
-
-  <!-- Fonts (different choice than other project) -->
+  <meta name="description" content="Nutritionist — personalized nutrition plans, guided coaching and tasty recipes.">
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- different css filename to avoid similarity -->
+  <!-- main stylesheet -->
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  <!-- keyboard skip -->
   <a class="skip-to" href="#content">Skip to content</a>
 
-  <!-- top header strip -->
+  <!-- Top strip -->
   <div class="top-strip">
     <div class="wrap">
       <small>Open consultations — Book today</small>
@@ -26,7 +23,7 @@
     </div>
   </div>
 
-  <!-- main header -->
+  <!-- Header -->
   <header class="main-header" role="banner">
     <div class="wrap header-grid">
       <div class="logo"><a href="index.html">Nutritionist</a></div>
@@ -42,45 +39,65 @@
     </div>
   </header>
 
-  <!-- hero with left content, right small gallery -->
+  <!-- Main content -->
   <main id="content" class="wrap">
-    <section class="hero-area">
+    <!-- HERO: left copy / right image -->
+    <section class="hero-area hero-enhanced" aria-labelledby="hero-title">
       <div class="hero-left">
-        <h1>Eat better. Live better. <span class="accent">One plan at a time.</span></h1>
-        <p class="subtitle">Evidence-based meal planning, regular coaching and tasty recipes built around you.</p>
+        <h1 id="hero-title">Eat better. Live better. <span class="accent">One plan at a time.</span></h1>
+        <p class="subtitle">Evidence-based meal planning, regular coaching and tasty recipes built around you. Sustainable change > quick fixes.</p>
+
         <div class="actions">
           <a class="btn primary" href="#">Start Free Trial</a>
           <a class="btn secondary" href="#">See Plans</a>
         </div>
+
         <p class="kpi">Trusted by <strong>500+</strong> clients across the city</p>
+
+        <!-- Feature icons row (compact) -->
+        <ul class="home-features" aria-hidden="false">
+          <li><strong>✓</strong> Personal Plans</li>
+          <li><strong>✓</strong> Video Coaching</li>
+          <li><strong>✓</strong> Family Friendly</li>
+        </ul>
       </div>
 
       <div class="hero-right">
-        <div class="mini-card">Weekly menus</div>
-        <div class="mini-card">Progress tracking</div>
-        <div class="mini-card">Recipe videos</div>
+        <!-- Responsive hero image using srcset -->
+        <figure class="hero-figure" aria-hidden="true">
+          <img
+            src="assets/home-small.jpg"
+            srcset="assets/home-small.jpg 600w, assets/home-large.jpg 1400w"
+            sizes="(max-width:720px) 100vw, 40vw"
+            alt="Smiling person holding a bowl of fresh salad and a notebook with a meal plan">
+        </figure>
       </div>
     </section>
 
-    <!-- feature row -->
-    <section class="features">
-      <article class="fcard">
-        <h3>Custom meal plans</h3>
-        <p>Plans created from your preferences, allergies and schedule.</p>
-      </article>
-      <article class="fcard">
-        <h3>1:1 coaching</h3>
-        <p>Regular check-ins to keep you accountable and progressing.</p>
-      </article>
-      <article class="fcard">
-        <h3>Smart tracking</h3>
-        <p>Insights from your logged meals help us fine-tune your plan.</p>
-      </article>
+    <!-- Services -->
+    <section class="features features-hero" aria-labelledby="features-title">
+      <h2 id="features-title" class="section-heading">What we offer</h2>
+      <div class="features-grid">
+        <article class="fcard">
+          <h3>Custom meal plans</h3>
+          <p>Plans created from your preferences, allergies and schedule.</p>
+        </article>
+
+        <article class="fcard">
+          <h3>1:1 coaching</h3>
+          <p>Regular check-ins to keep you accountable and progressing.</p>
+        </article>
+
+        <article class="fcard">
+          <h3>Smart tracking</h3>
+          <p>Insights from your logged meals help us fine-tune your plan.</p>
+        </article>
+      </div>
     </section>
 
-    <!-- small blog teasers -->
-    <section class="insights">
-      <h2>Insights</h2>
+    <!-- Insights -->
+    <section class="insights" aria-labelledby="insights-title">
+      <h2 id="insights-title" class="section-heading">Insights</h2>
       <ul>
         <li><a href="#">How to build a breakfast you don't skip</a></li>
         <li><a href="#">5 pantry staples for quick dinners</a></li>
@@ -89,7 +106,7 @@
     </section>
   </main>
 
-  <!-- footer -->
+  <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="wrap footer-grid">
       <div>© <span id="yr"></span> Nutritionist</div>
@@ -97,9 +114,8 @@
     </div>
   </footer>
 
-  <!-- small JS -->
+  <!-- JS: menu toggle + year -->
   <script>
-    // simple accessible menu toggle
     const menuBtn = document.getElementById('menu-toggle');
     const navList = document.getElementById('nav-list');
     menuBtn.addEventListener('click', () => {
@@ -108,8 +124,6 @@
       navList.classList.toggle('open');
       navList.setAttribute('aria-hidden', expanded ? 'true' : 'false');
     });
-
-    // populate year
     document.getElementById('yr').textContent = new Date().getFullYear();
   </script>
 </body>
